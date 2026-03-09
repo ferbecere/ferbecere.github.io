@@ -81,7 +81,7 @@ function openModal(project) {
   document.getElementById('modal-num').textContent   = project.num;
   document.getElementById('modal-title').textContent = project.title;
   const raw = project.info || project.desc;
-  const formatted = raw.replace(/^##(.+)$/gm, '<strong class="modal-section-title">$1</strong>');
+  const formatted = raw.replace(/^\s*##(.+)$/gm, '<strong class="modal-section-title">$1</strong>');
   document.getElementById('modal-desc').innerHTML = formatted;
 
   const tagsEl = document.getElementById('modal-tags');
