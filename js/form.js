@@ -124,8 +124,19 @@ async function handleSubmit(e, btn) {
   btn.disabled = true;
   setSubmitState(btn, 'loading');
 
-  // Simular llamada a API (reemplaza con fetch real)
-  await new Promise(resolve => setTimeout(resolve, 1800));
+  // Enviar a Formspree
+  const response = await fetch('https://formspree.io/f/mkoqoyqe', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form),
+  });
+
+  if (!response.ok) {
+    // Error del servidor — volver al estado idle
+    setSubmitState(btn, 'idle');
+    btn.disabled = false;
+    return;
+  }
 
   setSubmitState(btn, 'done');
 
