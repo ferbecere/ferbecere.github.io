@@ -80,7 +80,9 @@ function openModal(project) {
   // Contenido
   document.getElementById('modal-num').textContent   = project.num;
   document.getElementById('modal-title').textContent = project.title;
-  document.getElementById('modal-desc').textContent  = project.info || project.desc;
+  const raw = project.info || project.desc;
+  const formatted = raw.replace(/^##(.+)$/gm, '<strong class="modal-section-title">$1</strong>');
+  document.getElementById('modal-desc').innerHTML = formatted;
 
   const tagsEl = document.getElementById('modal-tags');
   tagsEl.innerHTML = project.tags.map(t => `<li class="tag">${t}</li>`).join('');

@@ -11,10 +11,36 @@ const PROJECTS = [
     num: '001',
     title: 'Cuina bé-bè',
     desc: 'Herramienta de gestión de comidas para la primera infancia',
-    info: `Texto largo para el modal. 
-    Aquí puedes explicar el contexto, 
-    el problema, el proceso y el resultado con más detalle.`,
-    tags: ['UI Design', 'anime.js', 'Vanilla JS'],
+    info: `
+    Contexto: Desarrollo de un producto bajo una necesidad personal real: La gestión de la alimentación infantil.
+    Tomando la información de la guia de alimentación en la primera infancia de l'Àgencia de Salut Pública de Catalunya. Genero una aplicación para acceder a la información de forma más cómoda.
+    Stack: - React18 + vite: La idea siempre fue crear una SPA. 
+           - Supabase: Proporciona autenticación sin contraseña y una bbdd PostgreSQL. El plan gratuïto es suficiente para el proyecto.
+           - Tailwind: Sistema simple pero coherente de colores y tipografias. El reto de este proyecto son las funcionalidades no la gestión visual.
+           - Resend: API de gestion de mails. Plan gratuito generoso (3000mails/mes)
+           - @dnd-kit/core: Para gestionar el drag and drop en el calendario.
+    Retos:- Adaptar la información de la guia ya que muchas normas no eran vinárias por lo que se tenian que definir márgenes de edad.
+          - Establecer la base de datos y conectar multiusuarios. 
+          - El drag & drop del calendario respetando las reglas nutricionales.
+          - Definir e implementar el tracker de alergias (entre los 5 y 18 meses)
+          - Gestion de cambios en al bbdd, especialmente las "RLS policies".
+    Aprendizajes:
+          - Positivo:
+           - Centralizar todo el conocimiento de dominio en nutritionRules.js, de este modo los cambios en el catálgo no afectaban a ningún componente.
+           - Supabase RLS simplifica enormemente la seguridad de la base de datos
+           - El autoguardado en el calendarioy la lista de la compra elimina errores en el usuario.
+           - Que el tracker de alérgenos se muestre de forma contextual ha dado buenos resultados. 
+          - Cosas que haria distinto: 
+            - Diseñar al base de datos pensando en compartir con la familia desde el principio. Ya que la migración del esquema original dió muchos problemas e implico reescritura de las políticas de RLS.
+            - Usar React Query o SWR en vez de useEffect y useState  para la carga de datos. Simplifica mucho la gestion de los estados de carga y la caché.
+    Futuros updates:
+          - El sistema de "magic link" es válido por el momento pero para un uso mas intensivo quizás tener un login puede ser mas eficiente para gestionar datos
+          - Un libro de recetas vinculadas a los alimentos del catálogo
+          - Mejor definición de alimentos
+          - Domini propio y trabajo de branding y estilos
+          - Tests unitarios del motor de validación de alimentos.
+          `,
+    tags: ['React 18', 'Supabase', 'Tailwind CSS', 'Vercel', 'Resend'],
     github: 'https://github.com/ferbecere/CuinaBebe.git',
     live: 'https://cuina-bebe.vercel.app/',
   },
@@ -57,9 +83,9 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  'UI Design', 'UX Research', 'Motion Design',
-  'Figma', 'Vanilla JS', 'anime.js',
-  'CSS avanzado', 'SVG', 'HTML semántico',
+  'UI Design', 'UX Research', 'Adobe',
+  'Figma', 'Js & Ts', 'anime.js', 'Angular',
+  'CSS & tailwind', 'SVG', 'React',
 ];
 
 // ── Renderizado de cards ───────────────────

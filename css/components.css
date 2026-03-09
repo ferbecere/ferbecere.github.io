@@ -418,6 +418,18 @@
   font-size: var(--text-sm);
   line-height: var(--leading-loose);
   color: var(--color-muted-mid);
+  white-space: pre-line;
+}
+
+.modal-section-title {
+  display: block;
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
 }
 
 .modal-tags {
