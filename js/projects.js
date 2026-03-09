@@ -15,8 +15,8 @@ const PROJECTS = [
     Aquí puedes explicar el contexto, 
     el problema, el proceso y el resultado con más detalle.`,
     tags: ['UI Design', 'anime.js', 'Vanilla JS'],
-    github: 'https://github.com/tu-usuario/proyecto-uno',
-    live: 'https://proyecto-uno.vercel.app',
+    github: 'https://github.com/ferbecere/CuinaBebe.git',
+    live: 'https://cuina-bebe.vercel.app/',
   },
   {
     num: '002',
@@ -24,8 +24,8 @@ const PROJECTS = [
     desc: 'Juego interactivo online sobre historia y arte',
     info: 'Texto largo para el modal.',
     tags: ['UX Research', 'Figma'],
-    github: 'https://github.com/tu-usuario/proyecto-dos',
-    live: null,
+    github: 'https://github.com/ferbecere/CuinaBebe.git',
+    live: 'https://artline-production.up.railway.app/',
   },
   {
     num: '003',
@@ -33,8 +33,8 @@ const PROJECTS = [
     desc: 'Juevo interactivo local mediante Wikipedia',
     info: 'Texto largo para el modal.',
     tags: ['Motion', 'SVG'],
-    github: null,
-    live: 'https://proyecto-tres.vercel.app',
+    github: 'https://github.com/ferbecere/wiki_dice.git',
+    live: 'https://wikidice.vercel.app/',
   },
   {
     num: '004',
@@ -42,8 +42,8 @@ const PROJECTS = [
     desc: 'Generador de contraseñas legibles y seguras',
     info: 'Texto largo para el modal.',
     tags: ['Branding', 'CSS'],
-    github: null,
-    live: null,
+    github: 'https://github.com/ferbecere/SimPass.git',
+    live: 'https://sim-pass.vercel.app/',
   },
   {
     num: '005',
@@ -51,7 +51,7 @@ const PROJECTS = [
     desc: 'En desarrollo. Herramienta para escritura y generación de mundos (worldbuilding)',
     info: null,
     tags: ['TBD'],
-    github: null,
+    github: 'https://github.com/ferbecere/arcThread.git',
     live: null,
   },
 ];
