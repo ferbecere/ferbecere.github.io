@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fer bé — Creación Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=Epilogue:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>   <!-- anime.js -->
+
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- El canvas del cursor cubre toda la pantalla -->
+  <canvas id="cursor-canvas"></canvas>
+
+  <!-- ── Nav ───────────────────────────────── -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">Fer<em>/</em>Bé</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ──────────────────────────────── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div>
+          <p class="section-label" id="hero-label">WIP portfolio· 2026</p>
+          <h1 id="hero-title">
+              <span class="hero-line"><em>Diseño</em> y <em>código</em></span>
+              <span class="hero-line">como práctica integrada.</span>
+          </h1>
+          <p id="hero-sub">
+            UX Researcher, UI Designer &amp; Frontend Developer.<br />
+            Enfoque global del producto. Background en diseño gráfico y UX research, actualmente desarrollando aplicaciones web.
+          </p>
+          <div id="hero-cta" style="display:flex; gap:1rem; margin-top: 2.5rem;">
+            <a href="#work" class="btn btn-primary">Ver proyectos →</a>
+            <a href="#contact" class="btn btn-outline">Contacto</a>
+          </div>
+        </div>
+
+        <!-- Número decorativo grande -->
+        <div id="hero-deco" aria-hidden="true">
+          <span id="hero-year">2026</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Visual / imagen -->
+        <div class="about-visual reveal">
+          <canvas id="about-canvas"></canvas>
+          <span class="about-visual-label">// generative portrait</span>
+        </div>
+
+        <!-- Texto -->
+        <div class="about-text">
+          <span class="section-label">/ 01 — About</span>
+          <h2 class="section-title reveal">Hola, soy<br/>Ferran.</h2>
+
+          <div class="reveal">
+            <p>
+              <strong>Diseñador y desarrollador de productos digitales.</strong> Me interesa el
+               diseño desde la perspectiva del usuario,
+                con visión de conjunto del producto.
+                 Trabajo con una mirada transversal y aprendo constantemente 
+                 — incorporar nuevos conocimientos técnicos me ayuda a entender 
+                 mejor el medio digital.
+            </p>
+            <p>
+              Actualmente completando el GS DAW.<br />
+              vivo en La Garriga.
+            </p>
+          </div>
+
+          <ul class="skills-list reveal" id="skills-list"> <!-- Renderizado por projects.js -->
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Work ──────────────────────────────── -->
+  <section id="work">
+    <div class="container">
+      <span class="section-label">/ 02 — Work</span>
+      <h2 class="section-title reveal">Proyectos<br/>seleccionados.</h2>
+
+      <!-- Las cards se renderizan desde projects.js -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── Contact ───────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <span class="section-label">/ 03 — Contact</span>
+
+      <div class="contact-inner">
+
+        <!-- Info -->
+        <div class="contact-info reveal">
+          <h2 class="section-title">¿Quieres saber<br/>mas?</h2>
+          <p>
+            Si estas intersando en colaborar o buscas a alguien para formar parte de tu proyecto, ¡escríbeme!
+          </p>
+          <ul class="contact-links">
+            <li>
+              <a href="mailto:hola@tudominio.com" class="contact-link">
+                <span class="contact-link-label">Email</span>
+                hola@tudominio.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/ferrancalpe/" target="_blank" class="contact-link" rel="noopener">
+                <span class="contact-link-label">LinkedIn</span>
+                @ferrancalpe
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ferbecere" target="_blank" class="contact-link" rel="noopener">
+                <span class="contact-link-label">GitHub</span>
+                @ferbecere
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Formulario -->
+        <form id="contact-form" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="input-name">Nombre</label>
+            <input
+              class="form-input"
+              id="input-name"
+              name="name"
+              type="text"
+              placeholder="Tu nombre"
+              autocomplete="name"
+            />
+            <span class="form-error-msg" id="err-name">Este campo es obligatorio.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-email">Email</label>
+            <input
+              class="form-input"
+              id="input-email"
+              name="email"
+              type="email"
+              placeholder="tu@email.com"
+              autocomplete="email"
+            />
+            <span class="form-error-msg" id="err-email">Introduce un email válido.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-msg">Mensaje</label>
+            <textarea
+              class="form-textarea"
+              id="input-msg"
+              name="message"
+              rows="5"
+              placeholder="Cuéntame sobre tu proyecto..."
+            ></textarea>
+            <span class="form-error-msg" id="err-msg">Por favor escribe un mensaje.</span>
+          </div>
+
+          <button class="btn-submit" type="submit" id="btn-submit">
+            <span class="state state-idle">Enviar mensaje →</span>
+            <span class="state state-loading">
+              <span class="spinner"></span> Enviando...
+            </span>
+            <span class="state state-done">✓ Mensaje enviado</span>
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────── -->
+  <footer id="footer">
+    <span>© 2026 Ferran Calpe</span>
+  </footer>
+
+  <!-- JS como módulos ES — el orden importa:
+       cursor.js no depende de nada, main.js orquesta el resto -->
+  <script src="js/cursor.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+/*design-tokens*/
+
+:root {
+
+  /* ── Colores ── */
+  --color-bg:        #0e0e10;
+  --color-surface:   #141416;
+  --color-border:    #232328;
+  --color-accent:    #e8c547;      
+  --color-accent-dim:rgba(232, 197, 71, 0.12);
+  --color-purple:    #7c6fcd;      
+  --color-text:      #f0ece3;      
+  --color-muted:     #55555e;
+  --color-muted-mid: #88888f;
+
+  /* ── Tipografía ── */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Epilogue', sans-serif;
+
+  --text-xs:   0.65rem;
+  --text-sm:   0.8rem;
+  --text-base: 1rem;
+  --text-lg:   1.25rem;
+  --text-xl:   2rem;
+  --text-2xl:  3.5rem;
+  --text-3xl:  clamp(3.5rem, 9vw, 7.5rem);
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  --leading-tight:  0.95;
+  --leading-normal: 1.6;
+  --leading-loose:  1.9;
+
+  --tracking-tight:  -0.03em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.12em;
+  --tracking-wider:   0.2em;
+
+  /* ── Espaciado ── */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* ── Bordes ── */
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --border-px: 1px solid var(--color-border);
+
+  /* ── Transiciones ── */
+  --ease-out:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:    150ms;
+  --dur-mid:     300ms;
+  --dur-slow:    600ms;
+
+  /* ── Layout ── */
+  --max-width:    1200px;
+  --nav-height:   64px;
+  --section-pad:  var(--space-32) var(--space-12);
+}

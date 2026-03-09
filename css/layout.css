@@ -1,0 +1,205 @@
+/* ═══════════════════════════════════════════
+   layout.css — Estructura y secciones
+   Aquí vive el esqueleto visual de la página:
+   nav, grid, secciones, wrappers.
+═══════════════════════════════════════════ */
+
+/* ── Cursor canvas (cubre toda la pantalla) ── */
+#cursor-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ── Wrapper centrado reutilizable ── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-12);
+}
+
+/* ── Nav ── */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--space-12);
+  /* empieza transparente — js añade .scrolled */
+  border-bottom: 1px solid transparent;
+  transition: background var(--dur-slow) var(--ease-out),
+              border-color var(--dur-slow) var(--ease-out);
+}
+
+#nav.scrolled {
+  background: rgba(14, 14, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--color-border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-tight);
+}
+
+.nav-logo em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.nav-links a {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color var(--dur-mid) var(--ease-out);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--color-accent);
+  transition: width var(--dur-mid) var(--ease-out);
+}
+
+.nav-links a:hover        { color: var(--color-text); }
+.nav-links a:hover::after { width: 100%; }
+
+/* ── Secciones ── */
+section {
+  padding: var(--section-pad);
+  border-top: var(--border-px);
+}
+
+section:first-of-type {
+  border-top: none;
+}
+
+/* ── Hero (pantalla completa) ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+  border-top: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+/* Estados iniciales ocultos — anime.js los revela al entrar */
+#hero-label,
+#hero-sub,
+#hero-cta,
+#hero-year { opacity: 0; }
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Hero title */
+#hero-title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+  overflow: visible;
+}
+
+#hero-title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Hero sub */
+#hero-sub {
+  font-size: var(--text-base);
+  color: var(--color-muted-mid);
+  line-height: var(--leading-loose);
+  max-width: 420px;
+}
+
+/* Año decorativo de fondo */
+#hero-year {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── About grid ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* ── Projects grid ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: var(--border-px);
+  margin-top: var(--space-12);
+}
+
+/* ── Contact layout ── */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* ── Footer ── */
+#footer {
+  padding: var(--space-8) var(--space-12);
+  border-top: var(--border-px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ── Reveal utility (para scroll animations) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* js añade .is-visible cuando entra en viewport */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s var(--ease-out),
+              transform 0.7s var(--ease-out);
+}
